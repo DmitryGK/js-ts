@@ -45,7 +45,7 @@ beforeEach(() => {
     }
 })
 
-test('test city should contains 3 houses', () => {
+test('city should contains 3 houses', () => {
     expect(city.houses.length).toBe(3)
 
     expect(city.houses[0].buildedAT).toBe(2012)
@@ -64,7 +64,7 @@ test('test city should contains 3 houses', () => {
     expect(city.houses[2].address.street.title).toBe('Happy street')
 })
 
-test('test city should contain hospital and fire station', () => {
+test('city should contain hospital and fire station', () => {
     expect(city.governmentBuildings.length).toBe(2)
 
     expect(city.governmentBuildings[0].type).toBe('HOSPITAL')
