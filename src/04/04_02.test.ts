@@ -1,8 +1,8 @@
 import {GovernmentBuildingsType, HousesType} from "../02/02_02";
-import {demolishHousesOnTheStreet} from "./04_02";
+import {demolishHousesOnTheStreet, getBuildingsWithStaffCountGreaterThen} from "./04_02";
 
 type CityType = {
-    title:string
+    title: string
     houses: Array<HousesType>
     governmentBuildings: Array<GovernmentBuildingsType>
     citizensNumber: number
@@ -18,11 +18,11 @@ beforeEach(() => {
             buildedAT: 2012, repaired: false,
             address: {number: 100, street: {title: 'White street'}}
         }, {
-            id:2,
+            id: 2,
             buildedAT: 2008, repaired: false,
             address: {number: 100, street: {title: 'Happy street'}}
         }, {
-            id:3,
+            id: 3,
             buildedAT: 2020, repaired: false,
             address: {number: 101, street: {title: 'Happy street'}}
         },],
@@ -90,7 +90,16 @@ test('city should contain hospital and fire station', () => {
 })
 
 test('Houses should be destroyed', () => {
-    demolishHousesOnTheStreet(city,'Happy street')
+    demolishHousesOnTheStreet(city, 'Happy street')
 
     expect(city.houses.length).toBe(1)
 })
+
+test('buildings with correct stuff count', () => {
+        let buildings = getBuildingsWithStaffCountGreaterThen(
+            city.governmentBuildings,
+            500)
+    }
+
+    expect(buildings.)
+)
