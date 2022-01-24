@@ -1,33 +1,29 @@
-
- type ManType = {
-    name: string
-     age: number
-     lessons: Array<{title:string}>
-     address: {street:{title:string}}
-}
-
-
+import {ManType} from "./Destructuring";
 
 
 let man: ManType
-beforeEach( () => {
+beforeEach(() => {
     man = {
         name: 'Dmitry',
         age: 32,
-        lessons: [{title: '1'},{title: '2'}],
+        lessons: [{title: '1'}, {title: '2'}],
         address: {
             street: {
                 title: 'Name street'
             }
         }
+    }
 })
 
-test('', () => {
+test('should be corrected', () => {
 
 
-    const{age, lessons} = man
+    const {age, lessons} = man
+    const {title} = man.address.street
 
     expect(age).toBe(32)
     expect(lessons.length).toBe(2)
+
+    expect(title).toBe('Name street')
 })
 
